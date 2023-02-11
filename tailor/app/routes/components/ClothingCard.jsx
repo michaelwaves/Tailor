@@ -15,7 +15,7 @@ export default function ClothingCard(props) {
             <h3 className="flex-grow mr-8">{props.title}</h3>
             <div id="buttons" className="flex flex-col gap-y-2 py-2">
                 <SizeMenu setOpen={setOpenSize} open={openSize}>
-                    <div className="absolute translate-x-20">
+                    <div className="absolute translate-x-14 -translate-y-4">
                         <input
                             type="text"
                             id="size"

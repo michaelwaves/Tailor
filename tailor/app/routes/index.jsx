@@ -16,7 +16,6 @@ export default function Index() {
   const [style, setStyle] = useState("casual");
   const [place, setPlace] = useState("home");
 
-
   return (
     <div className=" flex-col flex mx-auto max-w-2xl py-32 sm:py-48 lg:py-56 items-center">
       <div id="title-container"></div>
@@ -33,9 +32,19 @@ export default function Index() {
       <div id="personalized-container" className="w-1/2 mt-5 bg-gradient-to-r from-secondary to-secondary-dark flex flex-col gap-y-2 py-4 px-4 w-3xl rounded-xl">
         <h2 className="text-2xl font-bold text-white flex flex-row">Make it <div className="bg-white rounded-xl mx-2 px-2"> <p className="bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 text-transparent bg-clip-text">YOURS</p></div> :{')'}</h2>
         <p className="text-white font-bold">Choose your style</p>
-        <input type="text" id="style" className="bg-primary rounded-xl text-white px-5 py-2"></input>
+        <input
+          type="text"
+          id="style"
+          className="bg-primary rounded-xl text-white px-5 py-2"
+          onChange={(e) => setStyle(e.target.value)}>
+        </input>
         <p className="text-white font-bold">Choose your place</p>
-        <input type="text" id="place" className="bg-primary rounded-xl text-white px-5 py-2"></input>
+        <input type="text"
+          id="place"
+          className="bg-primary rounded-xl text-white px-5 py-2"
+          onChange={(e) => setPlace(e.target.value)}>
+
+        </input>
       </div>
       <div id="submit button" className="mt-5">
         <Link to="/carousel">
