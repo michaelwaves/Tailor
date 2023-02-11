@@ -42,7 +42,11 @@ export default function ClothingCard(props) {
                 </ColorMenu>
             </div>
             <div className="rounded-md bg-primary-dark text-base font-semibold leading-7 text-white shadow-sm hover:bg-primary">
-                <input type="image" src={remove} alt="remove button" className="pl-3 w-12 h-12" />
+                <input type="image"
+                    src={remove}
+                    alt="remove button"
+                    className="pl-3 w-12 h-12"
+                    onClick={() => props.remove(props.title)} />
             </div>
 
 
