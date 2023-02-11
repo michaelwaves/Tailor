@@ -8,10 +8,10 @@ import {
 } from "@remix-run/react";
 import styles from "./tailwind.css";
 
-export const links = () => [{
-  rel: "stylesheet",
-  href: styles,
-}]
+export function links() {
+  return [{ rel: "stylesheet", href: styles }]
+}
+
 export const meta = () => ({
   charset: "utf-8",
   title: "New Remix App",
