@@ -1,8 +1,9 @@
 import { Configuration, OpenAIApi } from "openai";
 import { useEffect, useState } from "react";
+import CarouselMain from "./carousel";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);
@@ -25,12 +26,9 @@ export default function ImageCreator({ title }) {
   return (
     <div>
       {result && (
-        <img
-          className="generatedImage"
-          src={result[0].url}
-          alt="Dall-E generated image"
-        />
+      < CarouselMain/>
       )}
+
     </div>
   );
 }
