@@ -9,7 +9,10 @@ From your terminal:
 ```sh
 npm run dev
 ```
-
+if npm run-p not found, run
+```sh
+npm install npm-run-all
+```
 This starts your app in development mode, rebuilding assets on file changes.
 
 ## Deployment

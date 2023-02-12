@@ -1,4 +1,4 @@
-import { Configuration, OpenAIApi } from "openai";
+//import { Configuration, OpenAIApi } from "openai";
 import { useEffect, useState } from "react";
 import CarouselMain from "./carousel";
 
@@ -26,7 +26,7 @@ export default function ImageCreator({ title }) {
   return (
     <div>
       {result && (
-      < CarouselMain/>
+        < CarouselMain />
       )}
 
     </div>
