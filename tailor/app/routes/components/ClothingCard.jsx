@@ -10,6 +10,16 @@ import ColorMenu from "./ColorMenu";
 export default function ClothingCard(props) {
     const [openSize, setOpenSize] = useState(false)
     const [openColor, setOpenColor] = useState(false)
+
+    function handleSubmitSize() {
+        setOpenSize(!openSize)
+        //props.setClothesPrompts({ title: props.clothesPrompts.title, color: props.clothesPrompts.color, size: props.size })
+    }
+    function handleSubmitColor() {
+        setOpenColor(!openColor)
+        //props.setClothesPrompts({ title: props.clothesPrompts.title, color: props.color, size: props.clothesPrompts.size })
+    }
+
     return (
         <div className="flex flex-row gap-2 items-center bg-white pl-5 rounded-xl">
             <h3 className="flex-grow mr-8">{props.title}</h3>
@@ -19,24 +29,28 @@ export default function ClothingCard(props) {
                         <input
                             type="text"
                             id="size"
-                            onChange={(e) => props.sizeChange(e.target.value)}
+                            value={props.size}
+                            onChange={(e) => props.setSize(e.target.value)}
                             className="bg-primary border-solid border-secondary border-2 rounded-xl text-white px-5 py-2 "></input>
                         <input
                             type='image'
                             src={send}
                             id="size-submit"
-                            onClick={() => setOpenSize(!openSize)}
+                            onClick={() => handleSubmitSize()}
                             className="w-6 h-6 -translate-x-8 translate-y-1" />
                     </div>
                 </SizeMenu>
                 <ColorMenu setOpen={setOpenColor} open={openColor}>
                     <div className="absolute translate-x-20">
-                        <input type="text" id="color" className="bg-primary border-solid border-secondary border-2 rounded-xl text-white px-5 py-2"></input>
+                        <input type="text" id="color"
+                            value={props.color}
+                            onChange={(e) => props.setColor(e.target.value)}
+                            className="bg-primary border-solid border-secondary border-2 rounded-xl text-white px-5 py-2"></input>
                         <input
                             type='image'
                             src={send}
                             id="size-submit"
-                            onClick={() => setOpenColor(!openColor)}
+                            onClick={() => handleSubmitColor()}
                             className="w-6 h-6 -translate-x-8 translate-y-1" />
                     </div>
                 </ColorMenu>
